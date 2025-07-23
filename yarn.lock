@@ -3406,7 +3406,6 @@ __metadata:
     "@types/eslint": "npm:^8.4.5"
     "@types/lz-string": "npm:^1.3.34"
     "@types/node": "npm:^18.14.6"
-    "@types/prettier": "npm:^2.6.3"
     "@types/react-dom": "npm:^18.0.6"
     "@typescript-eslint/typescript-estree": "npm:^5.59.0"
     dedent: "npm:^0.7.0"
@@ -3560,7 +3559,6 @@ __metadata:
     "@types/lodash": "npm:^4.14.165"
     "@types/node": "npm:^15.12.0"
     "@types/object-hash": "npm:^1.3.4"
-    "@types/prettier": "npm:^2.1.5"
     "@types/rollup__plugin-virtual": "npm:^2.0.1"
     astring: "npm:^1.8.6"
     concurrently: "npm:^8.2.2"
@@ -7340,13 +7338,6 @@ __metadata:
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
   checksum: 10/4df9de98150d2978afc2161482a3a8e6617883effba3223324f079de97ba7eabd7d84b90ced11c3f82b0c08d4a8383f678c9f73e9c41258f769b3fa234a2bb4f
-  languageName: node
-  linkType: hard
-
-"@types/prettier@npm:^2.1.5, @types/prettier@npm:^2.6.3":
-  version: 2.6.3
-  resolution: "@types/prettier@npm:2.6.3"
-  checksum: 10/fbaba4bfe1b4543bed6e62db0f9ae734b4536ff3dc83a1b8bb79835928fb0f653de626edae530703a20c5023546fdf2ba7e307c60f8544c9e65d0f8e196a9b72
   languageName: node
   linkType: hard
 
