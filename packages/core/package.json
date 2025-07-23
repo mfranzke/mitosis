@@ -72,7 +72,7 @@
     "object-hash": "^2.0.3",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-imports": "^3.2.3",
-    "prettier-plugin-svelte": "^2.10.0",
+    "prettier-plugin-svelte": "^3.4.0",
     "svelte": "^3.30.0",
     "svelte-preprocess": "^5.0.3",
     "ts-morph": "^19.0.0",
