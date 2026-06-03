@@ -387,8 +387,10 @@ Please add a initial value for every state property even if it's \`undefined\`.`
                   ?.map(
                     ({ code, depsArray }) =>
                       /**
-                       * We need allowSignalWrites only for Angular 17 https://angular.dev/api/core/CreateEffectOptions#allowSignalWrites
-                       * TODO: remove on 2025-05-15 https://angular.dev/reference/releases#actively-supported-versions
+                       * `allowSignalWrites` is required for Angular < 19 to permit signal writes
+                       * inside effects. It was deprecated in Angular 19 (writes are always allowed)
+                       * and logging it there produces console noise, so we gate it on the runtime
+                       * Angular version to keep backwards compatibility with v17/v18.
                        */
                       `effect(() => {
                       ${
@@ -396,16 +398,12 @@ Please add a initial value for every state property even if it's \`undefined\`.`
                           ? `
                       // --- Mitosis: Workaround to make sure the effect() is triggered ---
                       ${depsArray.join('\n')}
-                      // --- 
+                      // ---
                       `
                           : ''
                       }
                       ${code}
-                      },
-                      {
-                      allowSignalWrites: true, // Enable writing to signals inside effects
-                      }
-                      );`,
+                      }, Number(VERSION.major) < 19 ? ({ allowSignalWrites: true } as any) : undefined);`,
                   )
                   .join('\n')}
                   }
