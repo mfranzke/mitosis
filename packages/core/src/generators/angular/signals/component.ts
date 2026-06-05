@@ -297,7 +297,14 @@ Please add a initial value for every state property even if it's \`undefined\`.`
     // Hooks
 
     if (!emptyOnMount) {
-      addCodeNgAfterViewInit(json, json.hooks.onMount.map((onMount) => onMount.code).join('\n'));
+      // `onMount` runs only in the browser, after view initialization. Guard it
+      // so it does not execute during SSR.
+      addCodeNgAfterViewInit(
+        json,
+        `if (typeof window !== 'undefined') {
+          ${json.hooks.onMount.map((onMount) => onMount.code).join('\n')}
+        }`,
+      );
     }
 
     // Angular interfaces
@@ -436,9 +443,7 @@ Please add a initial value for every state property even if it's \`undefined\`.`
                   .filter(([_, value]) => !isHookEmpty(value))
                   .map(([key, value]) => {
                     return `${key}() {
-                    if (typeof window !== 'undefined') {
                 ${value.code}
-                }
               }`;
                   })
                   .join('\n')
