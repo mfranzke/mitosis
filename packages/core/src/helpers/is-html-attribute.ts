@@ -75,6 +75,7 @@ export const htmlElementAttributes: { [key: string]: string[] } = {
   body: ['alink', 'background', 'bgcolor', 'link', 'text', 'vlink'],
   br: ['clear'],
   button: [
+    'command',
     'disabled',
     'form',
     'formaction',
@@ -85,7 +86,6 @@ export const htmlElementAttributes: { [key: string]: string[] } = {
     'name',
     'type',
     'value',
-    'command',
   ],
   canvas: ['height', 'width'],
   caption: ['align'],
