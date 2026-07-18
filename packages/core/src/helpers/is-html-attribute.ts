@@ -85,6 +85,7 @@ export const htmlElementAttributes: { [key: string]: string[] } = {
     'name',
     'type',
     'value',
+    'command',
   ],
   canvas: ['height', 'width'],
   caption: ['align'],
