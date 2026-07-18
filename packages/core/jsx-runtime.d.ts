@@ -365,6 +365,7 @@ export declare namespace JSX {
     name?: string;
     type?: 'submit' | 'reset' | 'button';
     value?: string;
+    command?: string;
 
     // camelcase
     formAction?: string;
