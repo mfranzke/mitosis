@@ -355,6 +355,7 @@ export declare namespace JSX {
 
   interface ButtonHTMLAttributes<T> extends HTMLAttributes<T> {
     autofocus?: boolean;
+    command?: string;
     disabled?: boolean;
     form?: string;
     formaction?: string;
@@ -365,7 +366,6 @@ export declare namespace JSX {
     name?: string;
     type?: 'submit' | 'reset' | 'button';
     value?: string;
-    command?: string;
 
     // camelcase
     formAction?: string;
