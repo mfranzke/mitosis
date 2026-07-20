@@ -260,6 +260,7 @@ export declare namespace JSX {
     hidden?: boolean;
     id?: string;
     lang?: string;
+    popover?: 'auto' | 'hint' | 'manual' | '';
     spellcheck?: boolean;
     style?: CSS;
     css?: CSS | { [key: string]: CSS | undefined };
